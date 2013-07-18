@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sublime-better-javascript by int3h</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Sublime-better-javascript</h1>
+        <p>Fixes to Sublime Text's JavaScript handling</p>
+        <p class="view"><a href="https://github.com/int3h/sublime-better-javascript">View the Project on GitHub <small>int3h/sublime-better-javascript</small></a></p>
+        <ul>
+          <li><a href="https://github.com/int3h/sublime-better-javascript/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/int3h/sublime-better-javascript/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/int3h/sublime-better-javascript">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="sublime-better-javascript" class="anchor" href="#sublime-better-javascript"><span class="octicon octicon-link"></span></a>Sublime Better Javascript</h1>
+
+<p>This is a collection of tweaks to Sublime Text's JavaScript file handling, focused mainly on improving symbol navigation.</p>
+
+<p>The default JavaScript language definition in Sublime Text considers anonymous functions, object instantiation like <code>new Foo()</code>, and <code>console.log()</code> calls to be symbols, causing your "Goto Symbol..." menu to become cluttered and useless.</p>
+
+<p>This project fixes Sublime so only named function definitions and function prototype attributes show up in the symbol list. It also fixes how these symbols are displayed in the symbol list, so that only the function name is shown, so <code>function Foo()</code> becomes just <code>Foo</code>, <code>Bar.foo = function()</code> becomes <code>Bar.foo</code>, and so on. </p>
+
+<p>These tweaks have been tested on Sublime Text 2 and 3.</p>
+
+<h2>
+<a name="installing" class="anchor" href="#installing"><span class="octicon octicon-link"></span></a>Installing</h2>
+
+<p><code>cd</code> to your Sublime Text packages directory (you can find it via the "Preferences -&gt; Browse Packages..." menu item; with ST3 on Mac OS X, this is <code>~/Library/Application\ Support/Sublime\ Text\ 3/Packages/</code>, for example.) Then checkout this repo into a folder named <code>JavaScript</code>:</p>
+
+<pre><code>git clone https://github.com/int3h/sublime-better-javascript.git JavaScript
+</code></pre>
+
+<p>Alternatively, you can manually create a <code>JavaScript</code> subdirectory in your packages directory, and <a href="https://github.com/int3h/sublime-better-javascript/archive/master.zip">download</a> and extract the contents of this repo to that folder.</p>
+
+<h3>
+<a name="refreshing-the-symbols-of-existing-files" class="anchor" href="#refreshing-the-symbols-of-existing-files"><span class="octicon octicon-link"></span></a>Refreshing the symbols of existing files</h3>
+
+<p>In some cases, especially with Sublime Text 3, the symbols list of files that have been previously opened may not refresh with the improved symbols. </p>
+
+<p>The most reliable way I've found to fix this is to close all open JavaScript files and quit Sublime (it's important that all JS files are closed when Sublime exits.) Then delete the <code>Index</code> and <code>Cache</code> subdirectories in your Sublime user data directory (the parent of the <code>Packages</code> directory.) In Mac OS X, I've also had to delete ~/Library/Caches/com.sublimetext.3 (or com.sublimetext.2). </p>
+
+<h2>
+<a name="details" class="anchor" href="#details"><span class="octicon octicon-link"></span></a>Details</h2>
+
+<p>The default JavaScript.tmLanguage makes some... odd decisions on what namespace to put certain tokens in. Specifically, it puts a lot of tokens in the entity.name.* namespaces that probably shouldn't be. </p>
+
+<p>There is a file, <code>Symbol List Banned.tmPreferences</code>, in the JavaScript package which ostensibly is supposed to filter out some specific sub-namespaces from the symbols list, but it doesn't really work. I modified <code>Symbol List Banned.tmPreferences</code> to specifically match object instantiation and console.log calls, and set them to not show up in the symbol list.</p>
+
+<p>I also modified <code>Symbol List Function.tmPreferences</code> to do additional processing of function names with regexes, to strip out extraneous characters (like "function" and "= function()") before showing them in the symbol list. An additional file, <code>Symbol List Prototype.tmPreferences</code>, was added to include function prototype attributes in the symbol list.</p>
+
+<p>To get Sublime to use these updated files instead of its built-in, we have to place them in the user Packages folder with the same package and file name as the built-in versions. That's why the package folder has to be named "JavaScript" exactly, and the files have the names that they do. It's also how we get away with only distributing the files we changed, rather than the entire language definition: the files missing here will just cause Sublime to use its built-in version.</p>
+
+<h2>
+<a name="questions" class="anchor" href="#questions"><span class="octicon octicon-link"></span></a>Questions</h2>
+
+<ul>
+<li>
+<p><strong>Can you put this on <a href="http://wbond.net/sublime_packages/package_control">package control</a>?</strong> No, unfortunately. It's not enough to add our own language settings to Sublime; we need to also disable the existing language settings. </p>
+
+<p>To my knowledge, the only way to do that is to override the built-in files with your own version, by giving the package the same name as the built-in version, "JavaScript". If we wanted to distribute this via Package Control, it would have to retain that package name, which is undesirable for multiple reasons.</p>
+
+<p>There may be a way to do it via distributing an entirely new language definition, with new scope names and so on, but it'd be messy. If you have an idea on a better way to do it, let me know.</p>
+</li>
+<li><p><strong>Other issues?</strong> Feel free to open up an issue here if you're having trouble, or have ideas for improvements. I am also very receptive to pull requests.</p></li>
+</ul>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/int3h">int3h</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
