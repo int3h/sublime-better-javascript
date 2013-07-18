@@ -3,7 +3,7 @@ Sublime Better Javascript
 
 This is a collection of tweaks to Sublime Text's JavaScript file handling, focused mainly on improving symbol navigation.
 
-The default JavaScript language definition in Sublime Text has *quirky* symbol identification, and fills your symbols list with noise like anonymouse functions, object instantiation, and even calls to console.log().
+The default JavaScript language definition in Sublime Text has *quirky* symbol identification, and fills your symbols list with noise like anonymous functions, object instantiation, and even calls to console.log().
 
 ![Useless Symbol List](http://int3h.github.io/sublime-better-javascript/images/screenshot-bad-symbols.png)
 
