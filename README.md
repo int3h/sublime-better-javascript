@@ -17,11 +17,11 @@ These tweaks have been tested on Sublime Text 2 and 3.
 Installing
 --------------
 
-`cd` to your Sublime Text packages directory (you can find it via the "Preferences -> Browse Packages..." menu item; with ST3 on Mac OS X, this is `~/Library/Application\ Support/Sublime\ Text\ 3/Packages/`, for example.) Then checkout this repo into a folder named `JavaScript`:
+`cd` to your Sublime Text packages directory (you can find it via the "Preferences -> Browse Packages..." menu item; with ST3 on Mac OS X, this is `~/Library/Application\ Support/Sublime\ Text\ 3/Packages/`, for example.) Then close the repo into a folder named `JavaScript`:
 
     git clone https://github.com/int3h/sublime-better-javascript.git JavaScript
 
-Alternatively, you can manually create a `JavaScript` subdirectory in your packages directory, and [download](https://github.com/int3h/sublime-better-javascript/archive/master.zip) and extract the contents of this repo to that folder.
+Alternatively, you can [download](https://github.com/int3h/sublime-better-javascript/zipball/master) and extract the contents to a directory named "JavaScript" in your Packages directory (it must be that exact name to work.)
 
 
 ### Refreshing the symbols of existing files
