@@ -3,9 +3,13 @@ Sublime Better Javascript
 
 This is a collection of tweaks to Sublime Text's JavaScript file handling, focused mainly on improving symbol navigation.
 
-The default JavaScript language definition in Sublime Text considers anonymous functions, object instantiation like `new Foo()`, and `console.log()` calls to be symbols, causing your "Goto Symbol..." menu to become cluttered and useless.
+The default JavaScript language definition in Sublime Text has *quirky* symbol identification, and fills your symbols list with noise like anonymouse functions, object instantiation, and even calls to console.log().
 
-This project fixes Sublime so only named function definitions and function prototype attributes show up in the symbol list. It also fixes how these symbols are displayed in the symbol list, so that only the function name is shown, so `function Foo()` becomes just `Foo`, `Bar.foo = function()` becomes `Bar.foo`, and so on. 
+![Useless Symbol List](http://int3h.github.io/sublime-better-javascript/images/screenshot-bad-symbols.png)
+
+This project fixes Sublime so only named function definitions and function prototype attributes show up in the symbol list. It also fixes how these symbols are displayed in the symbol list, so that only the function names are shown.
+
+![Improved Symbol List](http://int3h.github.io/sublime-better-javascript/images/screenshot-good-symbols.png)
 
 These tweaks have been tested on Sublime Text 2 and 3.
 
