@@ -17,11 +17,21 @@ These tweaks have been tested on Sublime Text 2 and 3.
 Installing
 --------------
 
+### Sublime Text 3
+
 `cd` to your Sublime Text packages directory (you can find it via the "Preferences -> Browse Packages..." menu item; with ST3 on Mac OS X, this is `~/Library/Application\ Support/Sublime\ Text\ 3/Packages/`, for example.) Then close the repo into a folder named `JavaScript`:
 
     git clone https://github.com/int3h/sublime-better-javascript.git JavaScript
 
-Alternatively, you can [download](https://github.com/int3h/sublime-better-javascript/zipball/master) and extract the contents to a directory named "JavaScript" in your Packages directory (it must be that exact name to work.)
+
+### Sublime Text 2
+
+Sublime Text 2 is a little different because it extracts all of its default packages into the user's packages directorty. This means you likely already have a 'JavaScript' directory in your packages directorty.
+
+To install these tweaks, `git clone` or [download and extract](https://github.com/int3h/sublime-better-javascript/zipball/master) this repo anywhere in your system. Then `cd` to your Packages directory and copy the files into the JavaScript directory, overwriting any conflicting files as needed.
+
+The downside here is that your JavaScript package tweaks will not be linked to this repo, so you'll have to manually repeat the above process to see any updates to this repo.
+
 
 
 ### Refreshing the symbols of existing files
