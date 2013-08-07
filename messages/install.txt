@@ -1,0 +1,16 @@
+Better JavaScript
+=================
+Better JavaScript is now installed! To ensure that the updated syntax file and
+symbol list take effect, you may need to do the following:
+
+1. Close all open JavaScript/JSON files
+2. Exit Sublime
+3. Delete the cache and index files in your Sublime user directory
+4. Re-open Sublime
+
+
+Uninstalling
+------------
+Before uninstalling Better JavaScript, be sure close all open JavaScript/JSON
+files, and remove "JavaScript" from the "ignored_packages" list in your Sublime
+user settings. Then remove Better JavaScript and exit and re-open Sublime.
