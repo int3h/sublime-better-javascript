@@ -13,4 +13,7 @@ Uninstalling
 ------------
 Before uninstalling Better JavaScript, be sure close all open JavaScript/JSON
 files, and remove "JavaScript" from the "ignored_packages" list in your Sublime
-user settings. Then remove Better JavaScript and exit and re-open Sublime.
+user settings. You can now safely uninstall the Better JavaScript package.
+
+It's normal to see a few errors from Sublime about not being able to find syntax files. Just exit
+Sublime and re-open it, and everything should be fixed.
