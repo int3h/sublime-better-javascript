@@ -1,9 +1,7 @@
-Better JavaScript
-=================
-Better JavaScript is now installed! To ensure that the updated syntax file and
-symbol list take effect, you may need to do the following:
+Better JavaScript is now installed! To ensure that the updated syntax file and symbol list take
+effect, you may need to do the following:
 
-1. Close all open JavaScript/JSON files
+1. Close all open JavaScript/JSON files (including .sublime-settings files)
 2. Exit Sublime
 3. Delete the cache and index files in your Sublime user directory
 4. Re-open Sublime
