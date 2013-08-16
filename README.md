@@ -31,6 +31,16 @@ In some cases, especially with Sublime Text 3, the symbols list of files that ha
 The most reliable way I've found to fix this is to close all open JavaScript files and quit Sublime (it's important that all JS files are closed when Sublime exits.) Then delete the `Index` and `Cache` subdirectories in your Sublime user data directory (the parent of the `Packages` directory.) In Mac OS X, I've also had to delete ~/Library/Caches/com.sublimetext.3 (or com.sublimetext.2).
 
 
+Uninstalling
+------------
+Before uninstalling Better JavaScript, be sure close all open JavaScript/JSON
+files, and remove "JavaScript" from the "ignored_packages" list in your Sublime
+user settings. You can now safely uninstall the Better JavaScript package.
+
+It's normal to see a few errors from Sublime about not being able to find syntax files. Just exit
+Sublime and re-open it, and everything should be fixed.
+
+
 Details
 -------
 
